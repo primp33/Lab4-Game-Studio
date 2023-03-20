@@ -6,8 +6,6 @@ TagManager:
   tags:
   - Building
   - Enemy
-  - Win
-  - Lose
   layers:
   - Default
   - TransparentFX
