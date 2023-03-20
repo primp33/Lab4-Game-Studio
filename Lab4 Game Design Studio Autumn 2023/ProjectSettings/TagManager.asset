@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Win
   - Lose
+  - Window
   layers:
   - Default
   - TransparentFX
