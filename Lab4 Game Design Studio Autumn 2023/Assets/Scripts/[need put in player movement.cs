@@ -152,7 +152,7 @@ void Start()
         {
             losing.text = "You Lose!" + "\n" + "\n" + "Your Score is " + scoring.score + "\n" + "\n" + "Restart after 5 seconds.";
             Lose.SetActive(true);
-            Invoke("Restart", 5f);
+            Invoke("Restart", 5s);
         }
     }
 void Restart()
