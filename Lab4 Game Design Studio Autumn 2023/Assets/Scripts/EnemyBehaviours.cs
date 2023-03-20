@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBehaviours : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 1f;
+    [SerializeField] float moveSpeed = 0.5f;
 
     Rigidbody2D myRigidbody;
 
@@ -29,8 +29,11 @@ public class EnemyBehaviours : MonoBehaviour
         return transform.localScale.x > Mathf.Epsilon;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EditorOnly"))
+        {
         transform.localScale = new Vector2(-(Mathf.Sign(myRigidbody.velocity.x)), transform.localScale.y);
+        }
     }
 }
