@@ -7,13 +7,14 @@ public class ShootEffect : MonoBehaviour
 {
     private Animator anim;
     private GameObject player;
-    public int enemiesLeft = 9;
+    private Controller controller;
 
     // Start is called before the first frame update
     void Awake()
     {
         player = GameObject.Find("Player Sprite");
         anim = player.GetComponent<Animator>();
+        controller = player.GetComponent<Controller>();
     }
 
     // Update is called once per frame
@@ -22,15 +23,15 @@ public class ShootEffect : MonoBehaviour
     }
         private void OnTriggerEnter2D(Collider2D collision)
         {
-        if (!collision.gameObject.CompareTag("Wall"))
+        if (controller.window == true)
         {
-        if ((collision.gameObject.CompareTag("Enemy"))&&(anim.GetBool("Hit")==false))
-        {
-            anim.SetBool("Hit", true);
-            collision.gameObject.SetActive(false);
-            enemiesLeft -= 1;
-        }
+            if ((collision.gameObject.CompareTag("Enemy")) && (anim.GetBool("Hit") == false))
+            {
+                anim.SetBool("Hit", true);
+                collision.gameObject.SetActive(false);
+                controller.enemiesLeft -= 1;
+            }
         }
 
-    }
+        }
 }

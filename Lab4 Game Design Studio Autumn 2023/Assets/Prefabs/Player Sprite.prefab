@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1416078394}
   - component: {fileID: 1416078395}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hit
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416078393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.0733576, y: -5.5391874, z: 1.3357153}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39,11 +39,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416078393}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: eddc558cb1bfaec49a26a2ce0c7ee466, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -139,12 +139,11 @@ GameObject:
   - component: {fileID: 1849823780}
   - component: {fileID: 1849823782}
   - component: {fileID: 1849823781}
-  - component: {fileID: 1849823784}
   - component: {fileID: 1849823783}
   - component: {fileID: 1849823785}
   m_Layer: 3
   m_Name: explosion
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -312,27 +311,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!50 &1849823784
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849823779}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!58 &1849823783
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -346,9 +324,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.082601644}
   serializedVersion: 2
-  m_Radius: 2.56
+  m_Radius: 1.0463661
 --- !u!114 &1849823785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,12 +334,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849823779}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44ec0d9a04c830f4e800fa07410aacc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesLeft: 9
 --- !u!1 &6039724313381855186
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +418,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -895330773
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ae959eecd39ad5941b127e158c7b5e03, type: 3}
   m_Color: {r: 1, g: 0.09803922, b: 0, a: 1}
   m_FlipX: 0
@@ -465,7 +442,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b661eebc94ded4446b73ad1191fcabdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 4
   ammo: 15
+  window: 0
+  enemiesLeft: 6
 --- !u!50 &1508817344
 Rigidbody2D:
   serializedVersion: 4
@@ -500,9 +480,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.0072737783}
   serializedVersion: 2
-  m_Radius: 1.801724
+  m_Radius: 0.0996039
 --- !u!95 &1508817345
 Animator:
   serializedVersion: 5

@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Controller : MonoBehaviour
 {
-    private float speed = 4f;
+    public float speed = 4f;
     private Vector3 move;
     Animator anim;
-    public int ammo = 15;
+    public int ammo = 9;
+    public bool window;
+    public int enemiesLeft = 6;
 
     // Start is called before the first frame update
     void Start()
@@ -35,5 +37,18 @@ public class Controller : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Window")) { window = true; }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Window")) { window = false; }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("EditorOnly"))
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
     }
 }
