@@ -31,7 +31,7 @@ public class EnemyBehaviours : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EditorOnly"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.name == "wall")
         {
         transform.localScale = new Vector2(-(Mathf.Sign(myRigidbody.velocity.x)), transform.localScale.y);
         }
