@@ -18,6 +18,7 @@ public class Levels : MonoBehaviour
     public GameObject life1, life2, life3;
     private int life = 3;
     private int time = 120;
+    private GameObject player;
     //NEED TO ADD COUNTDOWN TIMER
     //LOSE A LIFE EVERYTIME TIME IS ZERO
 
@@ -32,7 +33,7 @@ public class Levels : MonoBehaviour
         win.SetActive(false);
         lose.SetActive(false);
         losing = GetComponent<Text>();
-
+        player = GameObject.Find("Player Sprite");
     }
 
     // Update is called once per frame
@@ -52,6 +53,8 @@ public class Levels : MonoBehaviour
         }
         if (controller.enemiesLeft == 0)
         {
+            controller.ammo = 15;
+
             if (level == 3)
             {
                 winning.text = "You Win!";
@@ -63,13 +66,15 @@ public class Levels : MonoBehaviour
         if (level == 2)
         {
             transform.position = new Vector3(0, 12,-10);
-            controller.enemiesLeft = 9;
+            player.transform.position = new Vector3(0, 12, player.transform.position.z);
+            controller.enemiesLeft = 7;
             time = 150;
         }
         if (level == 3)
         {
             transform.position = new Vector3(0, 24,-10);
-            controller.enemiesLeft = 12;
+            player.transform.position = new Vector3(0, 23, player.transform.position.z);
+            controller.enemiesLeft = 10;
             time = 180;
         }
 

@@ -8,6 +8,15 @@ public class EnemyBehaviours : MonoBehaviour
 
     Rigidbody2D myRigidbody;
 
+    private void OnBecameVisible()
+    {
+        enabled = true;
+    }
+
+    private void OnBecameInvisible()
+    {
+        enabled = false;
+    }
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -15,25 +24,27 @@ public class EnemyBehaviours : MonoBehaviour
 
     void Update()
     {
-        if(IsFacingRight())
-        {
-            myRigidbody.velocity = new Vector2(moveSpeed, 0f);
-        } else
-        {
-            myRigidbody.velocity = new Vector2(-moveSpeed, 0f);
-        }
+        //if(IsFacingRight())
+        //{
+        myRigidbody.velocity = transform.right * moveSpeed;
+        //} else
+        //{
+        //    myRigidbody.velocity = new Vector2(-moveSpeed, 0f);
+        //}
     }
 
-    private bool IsFacingRight()
-    {
-        return transform.localScale.x > Mathf.Epsilon;
-    }
+    //private bool IsFacingRight()
+    //{
+    //    return transform.localScale.x > Mathf.Epsilon;
+    //}
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.name == "wall")
         {
-        transform.localScale = new Vector2(-(Mathf.Sign(myRigidbody.velocity.x)), transform.localScale.y);
+            //transform.localScale = new Vector2(-((myRigidbody.velocity.x)), transform.localScale.y);
+            moveSpeed = -moveSpeed;
         }
     }
+
 }
