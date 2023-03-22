@@ -1490,6 +1490,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 85777017}
     - target: {fileID: 2885715632748333941, guid: 582acdb4d5c192141bf270bf0e99f1bc, type: 3}
+      propertyPath: timeText
+      value: 
+      objectReference: {fileID: 581750597}
+    - target: {fileID: 2885715632748333941, guid: 582acdb4d5c192141bf270bf0e99f1bc, type: 3}
       propertyPath: controller
       value: 
       objectReference: {fileID: 1119887510}
@@ -1497,6 +1501,22 @@ PrefabInstance:
       propertyPath: shooteffect
       value: 
       objectReference: {fileID: 1605806808}
+    - target: {fileID: 2885715632748333941, guid: 582acdb4d5c192141bf270bf0e99f1bc, type: 3}
+      propertyPath: lives.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2885715632748333941, guid: 582acdb4d5c192141bf270bf0e99f1bc, type: 3}
+      propertyPath: lives.Array.data[0]
+      value: 
+      objectReference: {fileID: 928417437}
+    - target: {fileID: 2885715632748333941, guid: 582acdb4d5c192141bf270bf0e99f1bc, type: 3}
+      propertyPath: lives.Array.data[1]
+      value: 
+      objectReference: {fileID: 819338232}
+    - target: {fileID: 2885715632748333941, guid: 582acdb4d5c192141bf270bf0e99f1bc, type: 3}
+      propertyPath: lives.Array.data[2]
+      value: 
+      objectReference: {fileID: 85777017}
     - target: {fileID: 2885715632748333960, guid: 582acdb4d5c192141bf270bf0e99f1bc, type: 3}
       propertyPath: m_Name
       value: Main Camera
