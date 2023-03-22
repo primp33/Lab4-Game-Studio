@@ -65,6 +65,7 @@ public class Levels : MonoBehaviour
         if (controller.enemiesLeft == 0 && !(level == 4))
         {
             controller.ammo = 15;
+
             level += 1;
             current = timeleft[level - 1];
 
@@ -90,10 +91,6 @@ public class Levels : MonoBehaviour
                 //stop timer
             }
 
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                controller.enemiesLeft = 0;
-            }
         }
     }
     //void life()
