@@ -34,7 +34,7 @@ public class Levels : MonoBehaviour
     {
         win.SetActive(false);
         lose.SetActive(false);
-        losing = GetComponent<Text>();
+        losing = lose.GetComponent<Text>();
         player = GameObject.Find("Player Sprite");
         current = 60;
     }
@@ -54,7 +54,7 @@ public class Levels : MonoBehaviour
         {
             lose.SetActive(true);
             losing.text = "You Lose!" + "\n" + "\n" + "Level "+ level + "   Enemies Left : " + controller.enemiesLeft + "\n" + "\n" + "Press 'R' to Restart";
-            //stop timer
+            Time.timeScale = 0;
         }
         if (current < 0)
         {
@@ -73,18 +73,26 @@ public class Levels : MonoBehaviour
             transform.position = new Vector3(0, 12,-10);
             player.transform.position = new Vector3(0, 12, player.transform.position.z);
             controller.enemiesLeft = 7;
+                controller.ammo = 20;
         }
         if (level == 3)
         {
             transform.position = new Vector3(0, 24,-10);
             player.transform.position = new Vector3(0, 23, player.transform.position.z);
             controller.enemiesLeft = 10;
+                controller.ammo = 25;
         }
             if (level == 4)
             {
                 winning.text = "You Win!";
                 win.SetActive(true);
+                Time.timeScale = 0;
                 //stop timer
+            }
+
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                controller.enemiesLeft = 0;
             }
         }
     }
